@@ -31,6 +31,27 @@
             -webkit-font-smoothing: antialiased;
         }
 
+        /* Announcement Bar */
+        .announcement-bar {
+            background-color: #fef08a;
+            color: #854d0e;
+            text-align: center;
+            padding: 10px 15px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-bottom: 1px solid #fde047;
+        }
+
+        .announcement-bar a {
+            color: #713f12;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .announcement-bar a:hover {
+            text-decoration: underline;
+        }
+
         /* Navbar */
         header {
             background-color: var(--card-bg);
@@ -138,10 +159,10 @@
             transform: translateY(-3px);
         }
 
-        /* Info Poster Containers (For Larvicides) */
+        /* Info Poster Containers */
         .poster-container {
             width: 100%;
-            background: #000; /* Dark background to make posters pop */
+            background: #000;
         }
         
         .poster-container img {
@@ -150,7 +171,7 @@
             display: block;
         }
 
-        /* Standard Image Containers (For Growth Products) */
+        /* Standard Image Containers */
         .card-img-container {
             padding: 20px;
             background: #f1f5f9;
@@ -164,7 +185,7 @@
             max-height: 180px;
             width: auto;
             border-radius: 8px;
-            mix-blend-mode: multiply; /* Removes white background from jpegs if any */
+            mix-blend-mode: multiply;
         }
 
         .card-content {
@@ -211,7 +232,7 @@
             line-height: 1.5;
         }
 
-        /* Featured Card: Root Developer */
+        /* Featured Card */
         .featured-card {
             background: white;
             border-radius: 12px;
@@ -288,19 +309,25 @@
             font-weight: bold;
         }
 
-        /* Mobile specific adjustments */
         @media (max-width: 767px) {
             .nav-container { justify-content: center; }
             .hero { padding: 40px 15px; }
             .hero h2 { font-size: 1.75rem; }
             .card-title { font-size: 1.25rem; }
             .featured-card { padding: 20px 15px; border-left-width: 4px; }
+            .announcement-bar { font-size: 0.85rem; padding: 8px 10px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
+    <div class="announcement-bar">
+        For inquiries regarding stock availability and pricing, please contact us: 
+        <br class="mobile-break" style="display: none;"> 
+        <a href="tel:+918806648454">📞 8806648454</a> &nbsp;|&nbsp; 
+        <a href="mailto:sonpariplantsci@yahoo.com">✉️ sonpariplantsci@yahoo.com</a>
+    </div>
+
     <header>
         <div class="nav-container">
             <img src="logo.jpeg" alt="Sonpari Plant Science Logo">
@@ -308,7 +335,6 @@
         </div>
     </header>
 
-    <!-- Hero Banner -->
     <section class="hero">
         <h2>Innovative Agricultural Solutions</h2>
         <p>Providing top-tier crop protection, advanced nutrition, and robust root development for higher-yielding harvests.</p>
@@ -316,10 +342,8 @@
 
     <div class="container">
         
-        <!-- Larvicides Section -->
         <h2 class="section-title">Larvicides (अळीनाशक)</h2>
         <div class="grid grid-2">
-            <!-- Oskar -->
             <div class="card">
                 <div class="poster-container">
                     <img src="Oscar poster.jpeg" alt="Oskar Larvicide Information Poster">
@@ -331,115 +355,3 @@
                     <p class="card-desc">A powerful, broad-spectrum larvicide providing highly effective control against Armyworm (Lashkari Ali), Fruit Borer, Stem Borer, and American Bollworm. Suitable for maize, cotton, soybean, chickpeas, pigeon pea (Tur), and all vegetable crops. Ensures fast results, long-lasting protection, and increased crop yield.</p>
                 </div>
             </div>
-            
-            <!-- Dr. Yoddha -->
-            <div class="card">
-                <div class="poster-container">
-                    <img src="yoddha poster.jpeg" alt="Dr. Yoddha Larvicide Information Poster">
-                </div>
-                <div class="card-content">
-                    <span class="badge larvicide">Dual Action Formula</span>
-                    <h3 class="card-title">Dr. Yoddha</h3>
-                    <div class="dose-highlight">Dose: 25 ML / 15 Liters of Water</div>
-                    <p class="card-desc">An advanced dual-action solution acting as both a Plant Growth Promoter and a Larvicide. Delivers 100% trusted results by effectively controlling all types of crop larvae while actively strengthening roots, promoting lush leaf growth, and maximizing overall yield. Safe and suitable for all crop varieties.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Plant Growth & Nutrition Section -->
-        <h2 class="section-title">Plant Growth & Activators</h2>
-        <div class="grid grid-3">
-            <!-- Super Sona -->
-            <div class="card">
-                <div class="card-img-container">
-                    <img src="super sona.jpeg" alt="Super Sona">
-                </div>
-                <div class="card-content">
-                    <span class="badge growth">Vitality Booster</span>
-                    <h3 class="card-title">Super Sona</h3>
-                    <p class="card-desc">Premium agricultural formulation aimed at boosting overall plant vitality, stimulating robust growth, and enhancing systemic resilience against environmental stress.</p>
-                </div>
-            </div>
-
-            <!-- Cash Plus G -->
-            <div class="card">
-                <div class="card-img-container">
-                    <img src="Cash plus g.jpeg" alt="Cash Plus G">
-                </div>
-                <div class="card-content">
-                    <span class="badge growth">Yield Enhancer</span>
-                    <h3 class="card-title">Cash Plus G</h3>
-                    <p class="card-desc">Advanced crop enhancer designed to maximize agricultural returns. Optimizes nutrient uptake to significantly improve harvest volume and produce quality.</p>
-                </div>
-            </div>
-
-            <!-- Quick Spredsil -->
-            <div class="card">
-                <div class="card-img-container">
-                    <img src="quick spredsel.jpeg" alt="Quick Spredsil">
-                </div>
-                <div class="card-content">
-                    <span class="badge activator">Silicon Activator</span>
-                    <h3 class="card-title">Quick Spredsil</h3>
-                    <p class="card-desc">High-quality silicon-based activator and spreader. Specifically designed to enhance the spreading, wetting, and penetration of agricultural sprays for maximum efficacy.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Featured Section: Root Developer -->
-        <div class="featured-card">
-            <div class="featured-header">
-                <h3>Root Developer</h3>
-                <p style="color: var(--text-muted);">Excellent quality potassium humate manufactured from highly pure grade leonardite. Oxidized by nature to deliver highly active humic and fulvic acids.</p>
-            </div>
-
-            <div class="grid grid-3">
-                <div class="spec-box">
-                    <h4>Composition</h4>
-                    <ul class="spec-list">
-                        <li><strong>Humic Acid:</strong> &gt;65%</li>
-                        <li><strong>Fulvic Acid:</strong> 15%</li>
-                        <li><strong>Organic Potash:</strong> &gt;12%</li>
-                        <li><strong>Trace elements:</strong> Q.S. (Total 100%)</li>
-                    </ul>
-                </div>
-
-                <div class="spec-box">
-                    <h4>Key Benefits</h4>
-                    <ul class="spec-list">
-                        <li>Increases root development & nutrient uptake</li>
-                        <li>Promotes better seed germination</li>
-                        <li>Stimulates beneficial microbial activity</li>
-                        <li>Unlocks availability of soil fertilizers</li>
-                    </ul>
-                </div>
-
-                <div class="spec-box">
-                    <h4>Application Guide</h4>
-                    <ul class="spec-list">
-                        <li><strong>250–300 gm / acre:</strong> Cotton, paddy, soybean, maize, wheat, mustard, pulses, groundnut, and vegetables.</li>
-                        <li><strong>500–600 gm / acre:</strong> Sugarcane, banana, grapes, pomegranate, mango, citrus fruit trees.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-brand">
-                <h2>Sonpari Plant Science</h2>
-            </div>
-            
-            <div class="footer-contact">
-                <p>Industrial Shopping Complex, STICE,<br>Musalgaon MIDC, Shirdi Road, Sinnar, Dist. Nashik - 422 112</p>
-                <p style="margin-top: 15px;"><strong>Email:</strong> <a href="mailto:sonpariplantsci@yahoo.com">sonpariplantsci@yahoo.com</a></p>
-                <p><strong>Customer Care:</strong> <a href="tel:+918806648454">8806648454</a></p>
-            </div>
-        </div>
-    </footer>
-
-</body>
-</html>
