@@ -166,7 +166,7 @@
             display: flex;
             flex-direction: column;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
-            scroll-margin-top: 120px; /* Accounts for the sticky header when jumping to anchors */
+            scroll-margin-top: 140px; /* Accounts for the sticky header when jumping to anchors */
         }
 
         .card:hover {
@@ -530,7 +530,7 @@
             <!-- Biogen -->
             <div class="card" id="biogen">
                 <div class="poster-container">
-                    <img src="Biogen.jpeg" alt="Biogen Poster">
+                    <img src="Biogen_2.jpeg" alt="Biogen Poster">
                 </div>
                 <div class="card-content">
                     <span class="badge growth">Natural Seaweed Extract</span>
@@ -707,15 +707,16 @@
         </div>
     </footer>
 
-    <!-- Direct Sharing Script -->
+    <!-- Scripts -->
     <script>
+        // WhatsApp Share Function
         function shareWhatsApp(productName, id) {
             const url = `https://sonpari-plant-science.github.io/#${id}`;
             const text = `Check out ${productName} from Sonpari Plant Science! 🌱\n\n${url}`;
-            // Opens WhatsApp with the pre-filled message
             window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
         }
 
+        // Copy Link Function
         function copyLink(id, btnElement) {
             const url = `https://sonpari-plant-science.github.io/#${id}`;
             navigator.clipboard.writeText(url).then(() => {
@@ -728,6 +729,19 @@
                 alert("Failed to copy link. Please manually copy the URL from your browser.");
             });
         }
+
+        // Fix for anchor links jumping incorrectly due to image load times on mobile
+        window.addEventListener('load', function() {
+            if (window.location.hash) {
+                const target = document.querySelector(window.location.hash);
+                if (target) {
+                    // Small delay ensures all posters have loaded and expanded before calculating scroll depth
+                    setTimeout(() => {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }, 250); 
+                }
+            }
+        });
     </script>
 </body>
 </html>
