@@ -166,7 +166,7 @@
             display: flex;
             flex-direction: column;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
-            scroll-margin-top: 100px;
+            scroll-margin-top: 120px; /* Accounts for the sticky header when jumping to anchors */
         }
 
         .card:hover {
@@ -251,30 +251,42 @@
             font-size: 0.9rem;
         }
 
-        .share-btn {
-            background-color: #128C7E; /* WhatsApp Green */
-            color: white;
-            border: none;
-            padding: 8px 12px;
+        .action-buttons {
+            display: flex;
+            gap: 8px;
+            margin-top: 8px;
+            flex-wrap: wrap;
+        }
+
+        .whatsapp-btn, .copy-btn {
+            padding: 6px 12px;
             border-radius: 6px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 700;
             cursor: pointer;
-            margin-top: 6px;
+            border: none;
+            transition: all 0.2s ease;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            transition: all 0.2s ease;
+            gap: 5px;
         }
 
-        .share-btn:hover {
-            background-color: #075E54;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 6px rgba(18, 140, 126, 0.3);
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
         }
 
-        .share-btn:active {
-            transform: translateY(0);
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+        }
+
+        .copy-btn {
+            background-color: #e2e8f0;
+            color: #475569;
+        }
+
+        .copy-btn:hover {
+            background-color: #cbd5e1;
         }
 
         .card-qr img {
@@ -342,6 +354,7 @@
 </head>
 <body>
 
+    <!-- Announcement Bar -->
     <div class="announcement-bar">
         For inquiries regarding stock availability and pricing, please contact us: 
         <br class="mobile-break" style="display: none;"> 
@@ -349,6 +362,7 @@
         <a href="mailto:sonpariplantsci@yahoo.com">✉️ sonpariplantsci@yahoo.com</a>
     </div>
 
+    <!-- Header -->
     <header>
         <div class="nav-container">
             <img src="logo.jpeg" alt="Sonpari Plant Science Logo">
@@ -359,6 +373,7 @@
         </div>
     </header>
 
+    <!-- Hero Banner -->
     <section class="hero">
         <h2>Innovative Agricultural Solutions</h2>
         <p>Providing top-tier crop protection, advanced nutrition, and robust root development for higher-yielding harvests.</p>
@@ -366,9 +381,11 @@
 
     <div class="container">
         
+        <!-- Larvicides Section -->
         <h2 class="section-title">Larvicides & Pest Control (अळीनाशक व कीटकनाशक)</h2>
         <div class="grid grid-2">
             
+            <!-- Punch Bio Miticide -->
             <div class="card" id="punch">
                 <div class="poster-container">
                     <img src="Punch.jpeg" alt="Punch Bio Miticide Poster">
@@ -381,16 +398,17 @@
                 </div>
                 <div class="card-qr">
                     <div class="card-qr-text">
-                        <strong>Share Product</strong>
-                        <button class="share-btn" onclick="shareProduct('Punch Bio Miticide', 'https://sonpari-plant-science.github.io/%23punch')">
-                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/></svg>
-                            Share Link
-                        </button>
+                        <strong>Share Product:</strong>
+                        <div class="action-buttons">
+                            <button class="whatsapp-btn" onclick="shareWhatsApp('Punch Bio Miticide', 'punch')">WhatsApp</button>
+                            <button class="copy-btn" onclick="copyLink('punch', this)">Copy Link</button>
+                        </div>
                     </div>
                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://sonpari-plant-science.github.io/%23punch" alt="QR Code for Punch">
                 </div>
             </div>
 
+            <!-- Dragon Bio Larvicide -->
             <div class="card" id="dragon">
                 <div class="poster-container">
                     <img src="Dragon Bio larvicide.jpeg" alt="Dragon Bio Larvicide Poster">
@@ -403,16 +421,17 @@
                 </div>
                 <div class="card-qr">
                     <div class="card-qr-text">
-                        <strong>Share Product</strong>
-                        <button class="share-btn" onclick="shareProduct('Dragon Bio Larvicide', 'https://sonpari-plant-science.github.io/%23dragon')">
-                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/></svg>
-                            Share Link
-                        </button>
+                        <strong>Share Product:</strong>
+                        <div class="action-buttons">
+                            <button class="whatsapp-btn" onclick="shareWhatsApp('Dragon Bio Larvicide', 'dragon')">WhatsApp</button>
+                            <button class="copy-btn" onclick="copyLink('dragon', this)">Copy Link</button>
+                        </div>
                     </div>
                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://sonpari-plant-science.github.io/%23dragon" alt="QR Code for Dragon">
                 </div>
             </div>
 
+            <!-- Thunder Bio Miticide -->
             <div class="card" id="thunder">
                 <div class="poster-container">
                     <img src="Thunder Larvicide.jpeg" alt="Thunder Bio Miticide Poster">
@@ -424,16 +443,17 @@
                 </div>
                 <div class="card-qr">
                     <div class="card-qr-text">
-                        <strong>Share Product</strong>
-                        <button class="share-btn" onclick="shareProduct('Thunder Bio Miticide', 'https://sonpari-plant-science.github.io/%23thunder')">
-                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/></svg>
-                            Share Link
-                        </button>
+                        <strong>Share Product:</strong>
+                        <div class="action-buttons">
+                            <button class="whatsapp-btn" onclick="shareWhatsApp('Thunder Bio Miticide', 'thunder')">WhatsApp</button>
+                            <button class="copy-btn" onclick="copyLink('thunder', this)">Copy Link</button>
+                        </div>
                     </div>
                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://sonpari-plant-science.github.io/%23thunder" alt="QR Code for Thunder">
                 </div>
             </div>
 
+            <!-- Oskar -->
             <div class="card" id="oskar">
                 <div class="poster-container">
                     <img src="Oscar poster.jpeg" alt="Oskar Larvicide Information Poster">
@@ -446,16 +466,17 @@
                 </div>
                 <div class="card-qr">
                     <div class="card-qr-text">
-                        <strong>Share Product</strong>
-                        <button class="share-btn" onclick="shareProduct('Oskar Larvicide', 'https://sonpari-plant-science.github.io/%23oskar')">
-                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/></svg>
-                            Share Link
-                        </button>
+                        <strong>Share Product:</strong>
+                        <div class="action-buttons">
+                            <button class="whatsapp-btn" onclick="shareWhatsApp('Oskar Larvicide', 'oskar')">WhatsApp</button>
+                            <button class="copy-btn" onclick="copyLink('oskar', this)">Copy Link</button>
+                        </div>
                     </div>
                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://sonpari-plant-science.github.io/%23oskar" alt="QR Code for Oskar">
                 </div>
             </div>
             
+            <!-- Dr. Yoddha -->
             <div class="card" id="yoddha">
                 <div class="poster-container">
                     <img src="yoddha poster.jpeg" alt="Dr. Yoddha Larvicide Information Poster">
@@ -468,20 +489,22 @@
                 </div>
                 <div class="card-qr">
                     <div class="card-qr-text">
-                        <strong>Share Product</strong>
-                        <button class="share-btn" onclick="shareProduct('Dr. Yoddha', 'https://sonpari-plant-science.github.io/%23yoddha')">
-                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/></svg>
-                            Share Link
-                        </button>
+                        <strong>Share Product:</strong>
+                        <div class="action-buttons">
+                            <button class="whatsapp-btn" onclick="shareWhatsApp('Dr. Yoddha', 'yoddha')">WhatsApp</button>
+                            <button class="copy-btn" onclick="copyLink('yoddha', this)">Copy Link</button>
+                        </div>
                     </div>
                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://sonpari-plant-science.github.io/%23yoddha" alt="QR Code for Dr. Yoddha">
                 </div>
             </div>
         </div>
 
+        <!-- Plant Growth & Nutrition Section -->
         <h2 class="section-title">Plant Growth & Activators</h2>
         <div class="grid grid-2">
 
+            <!-- All Mix -->
             <div class="card" id="all-mix">
                 <div class="poster-container">
                     <img src="All mix.jpeg" alt="All Mix Biostimulant Poster">
@@ -494,19 +517,20 @@
                 </div>
                 <div class="card-qr">
                     <div class="card-qr-text">
-                        <strong>Share Product</strong>
-                        <button class="share-btn" onclick="shareProduct('All Mix', 'https://sonpari-plant-science.github.io/%23all-mix')">
-                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/></svg>
-                            Share Link
-                        </button>
+                        <strong>Share Product:</strong>
+                        <div class="action-buttons">
+                            <button class="whatsapp-btn" onclick="shareWhatsApp('All Mix', 'all-mix')">WhatsApp</button>
+                            <button class="copy-btn" onclick="copyLink('all-mix', this)">Copy Link</button>
+                        </div>
                     </div>
                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://sonpari-plant-science.github.io/%23all-mix" alt="QR Code for All Mix">
                 </div>
             </div>
 
+            <!-- Biogen -->
             <div class="card" id="biogen">
                 <div class="poster-container">
-                    <img src="Biogen.jpeg" alt="Biogen Poster">
+                    <img src="Biogen_2.jpeg" alt="Biogen Poster">
                 </div>
                 <div class="card-content">
                     <span class="badge growth">Natural Seaweed Extract</span>
@@ -516,16 +540,17 @@
                 </div>
                 <div class="card-qr">
                     <div class="card-qr-text">
-                        <strong>Share Product</strong>
-                        <button class="share-btn" onclick="shareProduct('Biogen', 'https://sonpari-plant-science.github.io/%23biogen')">
-                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/></svg>
-                            Share Link
-                        </button>
+                        <strong>Share Product:</strong>
+                        <div class="action-buttons">
+                            <button class="whatsapp-btn" onclick="shareWhatsApp('Biogen', 'biogen')">WhatsApp</button>
+                            <button class="copy-btn" onclick="copyLink('biogen', this)">Copy Link</button>
+                        </div>
                     </div>
                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://sonpari-plant-science.github.io/%23biogen" alt="QR Code for Biogen">
                 </div>
             </div>
 
+            <!-- Root Stronger -->
             <div class="card" id="root-stronger">
                 <div class="poster-container">
                     <img src="root stronger.jpeg" alt="Root Stronger Poster">
@@ -538,16 +563,17 @@
                 </div>
                 <div class="card-qr">
                     <div class="card-qr-text">
-                        <strong>Share Product</strong>
-                        <button class="share-btn" onclick="shareProduct('Root Stronger', 'https://sonpari-plant-science.github.io/%23root-stronger')">
-                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/></svg>
-                            Share Link
-                        </button>
+                        <strong>Share Product:</strong>
+                        <div class="action-buttons">
+                            <button class="whatsapp-btn" onclick="shareWhatsApp('Root Stronger', 'root-stronger')">WhatsApp</button>
+                            <button class="copy-btn" onclick="copyLink('root-stronger', this)">Copy Link</button>
+                        </div>
                     </div>
                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://sonpari-plant-science.github.io/%23root-stronger" alt="QR Code for Root Stronger">
                 </div>
             </div>
             
+            <!-- Root Developer -->
             <div class="card" id="root-developer">
                 <div class="poster-container">
                     <img src="root developer.jpeg" alt="Root Developer Poster">
@@ -560,16 +586,17 @@
                 </div>
                 <div class="card-qr">
                     <div class="card-qr-text">
-                        <strong>Share Product</strong>
-                        <button class="share-btn" onclick="shareProduct('Root Developer', 'https://sonpari-plant-science.github.io/%23root-developer')">
-                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/></svg>
-                            Share Link
-                        </button>
+                        <strong>Share Product:</strong>
+                        <div class="action-buttons">
+                            <button class="whatsapp-btn" onclick="shareWhatsApp('Root Developer', 'root-developer')">WhatsApp</button>
+                            <button class="copy-btn" onclick="copyLink('root-developer', this)">Copy Link</button>
+                        </div>
                     </div>
                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://sonpari-plant-science.github.io/%23root-developer" alt="QR Code for Root Developer">
                 </div>
             </div>
 
+            <!-- Super Sona -->
             <div class="card" id="super-sona">
                 <div class="poster-container">
                     <img src="super sona.jpeg" alt="Super Sona Bio Granules Poster">
@@ -582,16 +609,17 @@
                 </div>
                 <div class="card-qr">
                     <div class="card-qr-text">
-                        <strong>Share Product</strong>
-                        <button class="share-btn" onclick="shareProduct('Super Sona', 'https://sonpari-plant-science.github.io/%23super-sona')">
-                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/></svg>
-                            Share Link
-                        </button>
+                        <strong>Share Product:</strong>
+                        <div class="action-buttons">
+                            <button class="whatsapp-btn" onclick="shareWhatsApp('Super Sona', 'super-sona')">WhatsApp</button>
+                            <button class="copy-btn" onclick="copyLink('super-sona', this)">Copy Link</button>
+                        </div>
                     </div>
                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://sonpari-plant-science.github.io/%23super-sona" alt="QR Code for Super Sona">
                 </div>
             </div>
 
+            <!-- Cash Plus G -->
             <div class="card" id="cash-plus">
                 <div class="poster-container">
                     <img src="Cash plus g.jpeg" alt="Cash Plus G Poster">
@@ -604,16 +632,17 @@
                 </div>
                 <div class="card-qr">
                     <div class="card-qr-text">
-                        <strong>Share Product</strong>
-                        <button class="share-btn" onclick="shareProduct('Cash Plus G', 'https://sonpari-plant-science.github.io/%23cash-plus')">
-                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/></svg>
-                            Share Link
-                        </button>
+                        <strong>Share Product:</strong>
+                        <div class="action-buttons">
+                            <button class="whatsapp-btn" onclick="shareWhatsApp('Cash Plus G', 'cash-plus')">WhatsApp</button>
+                            <button class="copy-btn" onclick="copyLink('cash-plus', this)">Copy Link</button>
+                        </div>
                     </div>
                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://sonpari-plant-science.github.io/%23cash-plus" alt="QR Code for Cash Plus G">
                 </div>
             </div>
 
+            <!-- Expro-X -->
             <div class="card" id="expro-x">
                 <div class="poster-container">
                     <img src="Xpro-X.jpeg" alt="Expro-X Poster">
@@ -626,16 +655,17 @@
                 </div>
                 <div class="card-qr">
                     <div class="card-qr-text">
-                        <strong>Share Product</strong>
-                        <button class="share-btn" onclick="shareProduct('Expro-X', 'https://sonpari-plant-science.github.io/%23expro-x')">
-                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/></svg>
-                            Share Link
-                        </button>
+                        <strong>Share Product:</strong>
+                        <div class="action-buttons">
+                            <button class="whatsapp-btn" onclick="shareWhatsApp('Expro-X', 'expro-x')">WhatsApp</button>
+                            <button class="copy-btn" onclick="copyLink('expro-x', this)">Copy Link</button>
+                        </div>
                     </div>
                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://sonpari-plant-science.github.io/%23expro-x" alt="QR Code for Expro-X">
                 </div>
             </div>
 
+            <!-- Quick Spredsil -->
             <div class="card" id="quick-spredsil">
                 <div class="poster-container">
                     <img src="quick spredsel.jpeg" alt="Quick Spredsil Poster">
@@ -648,11 +678,11 @@
                 </div>
                 <div class="card-qr">
                     <div class="card-qr-text">
-                        <strong>Share Product</strong>
-                        <button class="share-btn" onclick="shareProduct('Quick Spredsil', 'https://sonpari-plant-science.github.io/%23quick-spredsil')">
-                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/></svg>
-                            Share Link
-                        </button>
+                        <strong>Share Product:</strong>
+                        <div class="action-buttons">
+                            <button class="whatsapp-btn" onclick="shareWhatsApp('Quick Spredsil', 'quick-spredsil')">WhatsApp</button>
+                            <button class="copy-btn" onclick="copyLink('quick-spredsil', this)">Copy Link</button>
+                        </div>
                     </div>
                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://sonpari-plant-science.github.io/%23quick-spredsil" alt="QR Code for Quick Spredsil">
                 </div>
@@ -661,6 +691,7 @@
 
     </div>
 
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-brand">
@@ -676,54 +707,26 @@
         </div>
     </footer>
 
+    <!-- Direct Sharing Script -->
     <script>
-        function shareProduct(productName, productUrl) {
-            const shareData = {
-                title: productName + ' - Sonpari Plant Science',
-                text: 'Check out ' + productName + ' from Sonpari Plant Science! 🌱\n\n',
-                url: productUrl
-            };
-
-            // Check if mobile native share is available
-            if (navigator.share) {
-                navigator.share(shareData).catch((error) => console.log('Share dismissed.'));
-            } else {
-                // Fallback for Desktop/Unsupported Browsers
-                navigator.clipboard.writeText(shareData.text + shareData.url).then(() => {
-                    showToast("Link copied! You can now paste it in WhatsApp or anywhere else.");
-                }).catch(() => {
-                    alert("Failed to copy link. Please manually copy the URL from your browser.");
-                });
-            }
+        function shareWhatsApp(productName, id) {
+            const url = `https://sonpari-plant-science.github.io/#${id}`;
+            const text = `Check out ${productName} from Sonpari Plant Science! 🌱\n\n${url}`;
+            // Opens WhatsApp with the pre-filled message
+            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
         }
 
-        // Sleek notification for the clipboard fallback
-        function showToast(message) {
-            const toast = document.createElement("div");
-            toast.textContent = message;
-            toast.style.position = "fixed";
-            toast.style.bottom = "25px";
-            toast.style.left = "50%";
-            toast.style.transform = "translateX(-50%)";
-            toast.style.backgroundColor = "#1e293b";
-            toast.style.color = "#ffffff";
-            toast.style.padding = "12px 24px";
-            toast.style.borderRadius = "8px";
-            toast.style.boxShadow = "0 10px 15px -3px rgba(0, 0, 0, 0.1)";
-            toast.style.zIndex = "2000";
-            toast.style.fontSize = "0.95rem";
-            toast.style.fontWeight = "600";
-            toast.style.textAlign = "center";
-            toast.style.width = "max-content";
-            toast.style.maxWidth = "90%";
-            document.body.appendChild(toast);
-            
-            // Fade out
-            setTimeout(() => {
-                toast.style.transition = "opacity 0.5s ease";
-                toast.style.opacity = "0";
-                setTimeout(() => toast.remove(), 500);
-            }, 3000);
+        function copyLink(id, btnElement) {
+            const url = `https://sonpari-plant-science.github.io/#${id}`;
+            navigator.clipboard.writeText(url).then(() => {
+                const originalText = btnElement.innerHTML;
+                btnElement.innerHTML = '✅ Copied!';
+                setTimeout(() => {
+                    btnElement.innerHTML = originalText;
+                }, 2000);
+            }).catch(() => {
+                alert("Failed to copy link. Please manually copy the URL from your browser.");
+            });
         }
     </script>
 </body>
