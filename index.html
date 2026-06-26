@@ -171,23 +171,6 @@
             display: block;
         }
 
-        /* Standard Image Containers */
-        .card-img-container {
-            padding: 20px;
-            background: #f1f5f9;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 220px;
-        }
-
-        .card-img-container img {
-            max-height: 180px;
-            width: auto;
-            border-radius: 8px;
-            mix-blend-mode: multiply;
-        }
-
         .card-content {
             padding: 20px;
             flex: 1;
@@ -321,6 +304,7 @@
 </head>
 <body>
 
+    <!-- Announcement Bar -->
     <div class="announcement-bar">
         For inquiries regarding stock availability and pricing, please contact us: 
         <br class="mobile-break" style="display: none;"> 
@@ -328,6 +312,7 @@
         <a href="mailto:sonpariplantsci@yahoo.com">✉️ sonpariplantsci@yahoo.com</a>
     </div>
 
+    <!-- Header -->
     <header>
         <div class="nav-container">
             <img src="logo.jpeg" alt="Sonpari Plant Science Logo">
@@ -335,6 +320,7 @@
         </div>
     </header>
 
+    <!-- Hero Banner -->
     <section class="hero">
         <h2>Innovative Agricultural Solutions</h2>
         <p>Providing top-tier crop protection, advanced nutrition, and robust root development for higher-yielding harvests.</p>
@@ -342,8 +328,36 @@
 
     <div class="container">
         
-        <h2 class="section-title">Larvicides (अळीनाशक)</h2>
+        <!-- Larvicides Section -->
+        <h2 class="section-title">Larvicides & Pest Control (अळीनाशक व कीटकनाशक)</h2>
         <div class="grid grid-2">
+            
+            <!-- Dragon Bio Larvicide -->
+            <div class="card">
+                <div class="poster-container">
+                    <img src="Dragon Bio larvicide.jpeg" alt="Dragon Bio Larvicide Poster">
+                </div>
+                <div class="card-content">
+                    <span class="badge larvicide">Bio Larvicide</span>
+                    <h3 class="card-title">Dragon</h3>
+                    <div class="dose-highlight">Dose: 25 ML / Pump</div>
+                    <p class="card-desc">Dragon Bio Larvicide utilizes German based advance bio-technology to provide excellent control against all types of larvae. It is highly effective on crops such as maize, cotton, soybean, and pigeon pea (Tur). Expect fast results, robust crop safety, and an increase in overall yield.</p>
+                </div>
+            </div>
+
+            <!-- Thunder Bio Miticide -->
+            <div class="card">
+                <div class="poster-container">
+                    <img src="Thunder Larvicide.jpeg" alt="Thunder Bio Miticide Poster">
+                </div>
+                <div class="card-content">
+                    <span class="badge larvicide">Bio Miticide</span>
+                    <h3 class="card-title">Thunder</h3>
+                    <p class="card-desc">Thunder Bio Miticide is developed with German based advance bio-technology for highly effective control against all types of sucking pests. It successfully manages aphids (Mava), jassids (Tudtude), thrips (Fhulkide), mites (Koli), whitefly (Pandhari Mashi), and mealybugs. It offers fast results, promotes healthy plant growth, and significantly improves yield quality.</p>
+                </div>
+            </div>
+
+            <!-- Oskar -->
             <div class="card">
                 <div class="poster-container">
                     <img src="Oscar poster.jpeg" alt="Oskar Larvicide Information Poster">
@@ -356,6 +370,7 @@
                 </div>
             </div>
             
+            <!-- Dr. Yoddha -->
             <div class="card">
                 <div class="poster-container">
                     <img src="yoddha poster.jpeg" alt="Dr. Yoddha Larvicide Information Poster">
@@ -369,42 +384,64 @@
             </div>
         </div>
 
+        <!-- Plant Growth & Nutrition Section -->
         <h2 class="section-title">Plant Growth & Activators</h2>
-        <div class="grid grid-3">
+        <div class="grid grid-2">
+            
+            <!-- Super Sona -->
             <div class="card">
-                <div class="card-img-container">
-                    <img src="super sona.jpeg" alt="Super Sona">
+                <div class="poster-container">
+                    <img src="super sona.jpg" alt="Super Sona Bio Granules Poster">
                 </div>
                 <div class="card-content">
-                    <span class="badge growth">Vitality Booster</span>
-                    <h3 class="card-title">Super Sona</h3>
-                    <p class="card-desc">Premium agricultural formulation aimed at boosting overall plant vitality, stimulating robust growth, and enhancing systemic resilience against environmental stress.</p>
+                    <span class="badge growth">Plant Growth Promoter</span>
+                    <h3 class="card-title">Super Sona Bio Granules</h3>
+                    <div class="dose-highlight">Dose: 4 to 8 KG / Acre</div>
+                    <p class="card-desc">Super Sona Bio Granules contains Humic Acid 20%, Seaweed 10%, and Amino Acid 10%. It promotes strong root development, vigorous vegetative growth, and abundant yields. It improves nutrient absorption and stress tolerance for crops like sugarcane, soybean, cotton, onion, grapes, and pomegranate. Apply by mixing with soil or fertilizer.</p>
                 </div>
             </div>
 
+            <!-- Cash Plus G -->
             <div class="card">
-                <div class="card-img-container">
-                    <img src="Cash plus g.jpeg" alt="Cash Plus G">
+                <div class="poster-container">
+                    <img src="Cash plus g.jpg" alt="Cash Plus G Poster">
                 </div>
                 <div class="card-content">
-                    <span class="badge growth">Yield Enhancer</span>
+                    <span class="badge growth">100% Natural Growth</span>
                     <h3 class="card-title">Cash Plus G</h3>
-                    <p class="card-desc">Advanced crop enhancer designed to maximize agricultural returns. Optimizes nutrient uptake to significantly improve harvest volume and produce quality.</p>
+                    <div class="dose-highlight">Dose: 1.00 to 10 KG / Acre</div>
+                    <p class="card-desc">Cash Plus G is a 100% natural formula composed of Amino Acid 1.5%, Seaweed 1.0%, and Humic Acid 1.5%. It makes plant growth vigorous, increases new branches and shoots, and greatly improves flowering and fruiting. It helps retain soil nutrients for a longer period while increasing stress tolerance across all crops and horticulture.</p>
                 </div>
             </div>
 
+            <!-- Expro-X -->
             <div class="card">
-                <div class="card-img-container">
-                    <img src="quick spredsel.jpeg" alt="Quick Spredsil">
+                <div class="poster-container">
+                    <img src="Xpro-X.jpeg" alt="Expro-X Poster">
                 </div>
                 <div class="card-content">
-                    <span class="badge activator">Silicon Activator</span>
+                    <span class="badge growth">Seaweed Extract</span>
+                    <h3 class="card-title">Expro-X</h3>
+                    <div class="dose-highlight">Dose: 2-3 ML / Liter (Spray)</div>
+                    <p class="card-desc">Expro-X is an excellent plant growth promoter suitable for all crops, featuring Seaweed Extract 10.00% w/v alongside essential amino and humic acids. It stimulates vigorous vegetative growth, ensures abundant flowering and fruiting, and increases stress tolerance. Can also be applied via drip irrigation at 1-2 liters per acre.</p>
+                </div>
+            </div>
+
+            <!-- Quick Spredsil -->
+            <div class="card">
+                <div class="poster-container">
+                    <img src="quick spredsel_2.jpeg" alt="Quick Spredsil Poster">
+                </div>
+                <div class="card-content">
+                    <span class="badge activator">Silicon Based Activator</span>
                     <h3 class="card-title">Quick Spredsil</h3>
-                    <p class="card-desc">High-quality silicon-based activator and spreader. Specifically designed to enhance the spreading, wetting, and penetration of agricultural sprays for maximum efficacy.</p>
+                    <div class="dose-highlight">Dose: 5 ML / 15 Liters of Water</div>
+                    <p class="card-desc">Quick Spredsil is a premium silicon-based activator and quick spreader. Using just 5 ml per 15 liters of water with any weedicide, insecticide, or fungicide delivers 100% perfect results. It significantly increases spread, stickiness, and absorption on leaves, making crops healthy and productive while saving medicine costs.</p>
                 </div>
             </div>
         </div>
 
+        <!-- Featured Section: Root Developer -->
         <div class="featured-card">
             <div class="featured-header">
                 <h3>Root Developer</h3>
@@ -444,6 +481,7 @@
 
     </div>
 
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-brand">
