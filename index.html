@@ -95,6 +95,7 @@
             font-weight: 600;
             letter-spacing: 0;
             text-transform: none;
+            margin-top: 2px;
         }
 
         /* Hero Section */
@@ -298,6 +299,65 @@
             padding: 2px;
         }
 
+        /* About Us Section Styles */
+        .about-wrapper {
+            margin-top: 60px;
+            margin-bottom: 20px;
+        }
+
+        .about-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 35px 30px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 25px;
+        }
+
+        .about-card p {
+            margin-bottom: 18px;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .about-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .vision-mission-title {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 10px;
+        }
+
+        .mission-list {
+            list-style: none;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        .mission-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .mission-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-light);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
         /* Footer */
         footer {
             background-color: var(--primary);
@@ -321,23 +381,29 @@
         .footer-license {
             display: inline-block;
             background: rgba(255,255,255,0.1);
-            padding: 5px 15px;
+            padding: 8px 15px;
             border-radius: 20px;
             font-size: 0.9rem;
             margin-bottom: 25px;
             border: 1px solid rgba(255,255,255,0.2);
+            line-height: 1.4;
         }
 
         .footer-contact p {
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             color: #e2e8f0;
             font-size: 0.95rem;
+            line-height: 1.4;
         }
 
         .footer-contact a {
             color: var(--accent);
             text-decoration: none;
             font-weight: bold;
+        }
+
+        .address-block {
+            margin-bottom: 15px;
         }
 
         @media (max-width: 767px) {
@@ -349,6 +415,8 @@
             .announcement-bar { font-size: 0.85rem; padding: 8px 10px; }
             .card-qr { padding: 12px 15px; }
             .card-qr img { width: 65px; height: 65px; }
+            .about-card { padding: 20px; }
+            .about-card p { font-size: 1rem; }
         }
     </style>
 </head>
@@ -368,7 +436,7 @@
             <img src="logo.jpeg" alt="Sonpari Plant Science Logo">
             <div class="nav-title">
                 Sonpari Plant Science
-                <span class="lic-badge">Govt. Lic. No: LCBWD0320260068</span>
+                <span class="lic-badge">GST No: 27CKDPS2042H1Z7 &nbsp;|&nbsp; Lic. No: LCBWD0320260068</span>
             </div>
         </div>
     </header>
@@ -504,6 +572,52 @@
         <h2 class="section-title">Plant Growth & Activators</h2>
         <div class="grid grid-2">
 
+            <!-- S.P. Bahar -->
+            <div class="card" id="sp-bahar">
+                <div class="poster-container">
+                    <img src="S.P.Bahar.jpeg" alt="S.P. Bahar Poster">
+                </div>
+                <div class="card-content">
+                    <span class="badge growth">Biostimulant</span>
+                    <h3 class="card-title">S.P. Bahar</h3>
+                    <div class="dose-highlight">Dose: 15-20 ML / 15 Liters of Water</div>
+                    <p class="card-desc">S.P. Bahar is an excellent biostimulant and plant growth regulator suitable for all crops. It significantly improves plant growth, increases tillering, and enhances fruit size, weight, color, and taste. This 100% safe and natural formula ensures higher yields and better crop quality.</p>
+                </div>
+                <div class="card-qr">
+                    <div class="card-qr-text">
+                        <strong>Share Product:</strong>
+                        <div class="action-buttons">
+                            <button class="whatsapp-btn" onclick="shareWhatsApp('S.P. Bahar', 'sp-bahar')">WhatsApp</button>
+                            <button class="copy-btn" onclick="copyLink('sp-bahar', this)">Copy Link</button>
+                        </div>
+                    </div>
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://sonpari-plant-science.github.io/%23sp-bahar" alt="QR Code for S.P. Bahar">
+                </div>
+            </div>
+
+            <!-- Leaf Coating -->
+            <div class="card" id="leaf-coating">
+                <div class="poster-container">
+                    <img src="Leaf Coating.jpeg" alt="Leaf Coating Poster">
+                </div>
+                <div class="card-content">
+                    <span class="badge growth">Silicon Supplement</span>
+                    <h3 class="card-title">Leaf Coating</h3>
+                    <div class="dose-highlight">Mineral Silicon Supplement</div>
+                    <p class="card-desc">Leaf Coating is a premium mineral silicon supplement designed to improve plant health, quality, and yield naturally. It provides a strong leaf coating that enhances plant growth, protects against pests and diseases, reduces water evaporation, and improves cell strength and elasticity.</p>
+                </div>
+                <div class="card-qr">
+                    <div class="card-qr-text">
+                        <strong>Share Product:</strong>
+                        <div class="action-buttons">
+                            <button class="whatsapp-btn" onclick="shareWhatsApp('Leaf Coating', 'leaf-coating')">WhatsApp</button>
+                            <button class="copy-btn" onclick="copyLink('leaf-coating', this)">Copy Link</button>
+                        </div>
+                    </div>
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://sonpari-plant-science.github.io/%23leaf-coating" alt="QR Code for Leaf Coating">
+                </div>
+            </div>
+
             <!-- All Mix -->
             <div class="card" id="all-mix">
                 <div class="poster-container">
@@ -530,7 +644,7 @@
             <!-- Biogen -->
             <div class="card" id="biogen">
                 <div class="poster-container">
-                    <img src="Biogen.jpeg" alt="Biogen Poster">
+                    <img src="Biogen_2.jpeg" alt="Biogen Poster">
                 </div>
                 <div class="card-content">
                     <span class="badge growth">Natural Seaweed Extract</span>
@@ -689,6 +803,40 @@
             </div>
         </div>
 
+        <!-- About Us & Company Profile Section -->
+        <div class="about-wrapper">
+            <h2 class="section-title">About Sonpari Plant Science</h2>
+            
+            <div class="about-card">
+                <p><strong>Sonpari Plant Science</strong> is a pioneer in the manufacturing and marketing of Bio-Stimulants, Bio Fertilizers, Bio Pesticides, Plant Growth Regulators (PGR), Plant Growth Promoters (PGP), Agro Chemicals, Seeds, and Micronutrients. We offer a comprehensive range of high-quality agricultural inputs designed to improve crop health, enhance productivity, and maximize farmers' profitability.</p>
+                
+                <p>Established in 2016, Sonpari Plant Science has earned a strong reputation through innovation, quality, and customer satisfaction. With extensive industry expertise and in-depth market knowledge, we manufacture, market, trade, and supply our products across the Eastern, Western, and Northern regions of the Indian subcontinent.</p>
+                
+                <p>Our commitment to quality, reliability, and continuous improvement enables us to meet the evolving needs of modern agriculture. We focus on delivering effective crop solutions that help farmers achieve sustainable and profitable farming.</p>
+                
+                <p style="color: var(--primary); font-weight: 700; text-align: center; margin-top: 25px; font-size: 1.15rem;">Quality and Service are the core values that define Sonpari Plant Science and drive our long-term success.</p>
+            </div>
+
+            <div class="grid grid-2">
+                <div class="card" style="padding: 30px; box-shadow: var(--shadow-sm);">
+                    <h3 class="vision-mission-title">🎯 Vision</h3>
+                    <p style="color: var(--text-muted); line-height: 1.7; font-size: 1.05rem;">To emerge as a leading and trusted agro-input company in India by delivering innovative, high-quality, and environmentally responsible agricultural solutions. We strive to build a greener future through sustainable products, advanced manufacturing practices, and a highly motivated team.</p>
+                </div>
+                
+                <div class="card" style="padding: 30px; box-shadow: var(--shadow-sm);">
+                    <h3 class="vision-mission-title">🚀 Mission</h3>
+                    <ul class="mission-list">
+                        <li>To provide superior quality agro-input products that enhance agricultural productivity.</li>
+                        <li>To build long-term relationships with farmers, dealers, and business partners through trust and excellence.</li>
+                        <li>To ensure timely delivery and consistent product quality.</li>
+                        <li>To expand our distribution network across national and international markets.</li>
+                        <li>To follow ethical business practices with a strong customer-centric approach.</li>
+                        <li>To offer innovative, cost-effective, and sustainable solutions for modern agriculture.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <!-- Footer -->
@@ -696,11 +844,23 @@
         <div class="footer-content">
             <div class="footer-brand">
                 <h2>Sonpari Plant Science</h2>
-                <span class="footer-license">Govt. of Maharashtra License No: LCBWD0320260068</span>
+                <div class="footer-license">
+                    <strong>GST No:</strong> 27CKDPS2042H1Z7<br>
+                    <strong>Govt. Lic. No:</strong> LCBWD0320260068
+                </div>
             </div>
             
             <div class="footer-contact">
-                <p>Industrial Shopping Complex, STICE,<br>Musalgaon MIDC, Shirdi Road, Sinnar, Dist. Nashik - 422 112</p>
+                <div class="address-block">
+                    <p><strong>Office Address:</strong><br>
+                    F-3/105, STICE Musalgaon MIDC,<br>
+                    Shirdi Road, Sinnar, Nashik, Maharashtra – 422112</p>
+                </div>
+                <div class="address-block">
+                    <p><strong>Unit Address:</strong><br>
+                    E-35/B, Awadhan MIDC, Near Gangaji Oil Mill,<br>
+                    Mumbai–Agra Road, Dhule – 424006</p>
+                </div>
                 <p style="margin-top: 15px;"><strong>Email:</strong> <a href="mailto:sonpariplantsci@yahoo.com">sonpariplantsci@yahoo.com</a></p>
                 <p><strong>Customer Care:</strong> <a href="tel:+918806648454">8806648454</a></p>
             </div>
